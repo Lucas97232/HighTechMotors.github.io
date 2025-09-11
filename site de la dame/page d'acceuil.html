@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style8.css">
+    <title>Ma page d'accueil</title>
+ 
+</head>
+<body>
+    <header>
+        <div class="section_1">
+            <video id="background-video" autoplay muted>
+                <source src="Bmw.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+        </div>
+        <div class="section_2"></div>
+        <div class="section_3">
+            <div class="section_3_partion_1">
+                <div class="partition_1_head">
+                    <div class="logo_container"> 
+                        <div class="logo"></div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="formulaire de contact copie.html">Me contacter</a></li>
+                            <li><a href="../page centrale.html">Quittez le site</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <h1 class="welcome_message">Fan de voiture ? T'es au bon endroit 🔥</h1>
+            </div>
+            <div class="section_3_partion_2">
+                <div class="carts_container">
+                    <div class="cart cart_1">
+                        <a href="mon cv copie.html">
+                            <div class="cart_image cart_image_1">
+                                <p class="welcome_message">Mon CV!!</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cart cart_1">
+                        <a href="science fiction.html">
+                            <div class="cart_image cart_image_2">
+                                <p class="welcome_message">Science Fiction</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cart cart_1">
+                        <a href="Portrait chinois.html">
+                            <div class="cart_image cart_image_3">
+                                <p class="welcome_message">Mon portrait chinois</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cart cart_1">
+                        <a href="voiture.html">
+                            <div class="cart_image cart_image_4">
+                                <p class="welcome_message">Site perso </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let video = document.getElementById("background-video");
+            let section1 = document.querySelector(".section_1");
+            let images = ["audir8.jpg", "ferrari.jpg", "bugatti.jpg", "mercedes.jpg", "porsche.jpg","pub.jpg"];
+            let currentImageIndex = 0;
+
+            function showImage() {
+                section1.classList.add("fade-out");
+                setTimeout(() => {
+                    section1.style.background = `url(${images[currentImageIndex]}) center/cover no-repeat`;
+                    section1.innerHTML = "";
+                    section1.classList.remove("fade-out");
+                    section1.classList.add("fade-in");
+                    
+                    if (currentImageIndex < images.length - 1) {
+                        currentImageIndex++;
+                        setTimeout(showImage, 5000);
+                    }
+                }, 2000);
+            }
+            
+            video.addEventListener("ended", showImage);
+        });
+    </script>
+</body>
+</html>
+

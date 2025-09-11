@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page d'Accueil</title>
+    <link rel="stylesheet" href="style11.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="image">
+                <img src="formulaire2.png" alt="Image">
+            </div>
+            <div class="login">
+                <h2 class="title">Connexion</h2>
+                <h1>Salut les Amis bienvenue</h1>
+                <!-- <p>Entre tes identifiants personnels et commence à découvrir mon travail!🤗</p>  ligne provisoire a modifier quand je vais remettre l'adresse mail -->
+                <p>Entre les identifiants requis et découvre mon travail!🤗</p> <!-- ligne provisoire a modifier quand je vais remettre l'adresse mail --> 
+                <form id="loginForm" action="page centrale.html">
+                    <div class="identifiant">
+                        <input type="text" id="email" placeholder="Identifiant">  <!-- ligne provisoire a modifier quand je vais remettre l'adresse mail -->
+                        <input type="password" id="password" placeholder="Mot de passe">  <!-- ligne provisoire a modifier quand je vais remettre l'adresse mail -->
+                      <!--  <a href="#"><br>Mot de passe / Adresse Email oublié.</a>  ligne provisoire a modifier quand je vais remettre l'adresse mail -->
+                    </div>
+                    <input type="submit" value="Connexion">
+                </form>
+                <div id="error-message" style="color: red; margin-top: 10px;"></div>
+                <div class="link-2">
+                 <!--  <a href="index6.html">Vous n'avez pas de compte ? Créer un compte</a>  ligne provisoire a modifier quand je vais remettre l'adresse mail -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bienvenue-container">
+        <h1>Actions supplémentaires</h1>
+        <button onclick="window.location='Calculateur Ip.html';">Navigateur d'IP</button>
+        <button onclick="window.location='itineraire.html';">Itinéraire du lycée</button>
+    </div>
+
+<script>
+    const form = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const errorMessage = document.getElementById('error-message');
+    
+    // DÉFINIS L'IDENTIFIANT ET LE MOT DE PASSE CORRECTS ICI
+    const correctEmail = "admin"; // Si vous penser que je ne sais pas que le mot de passe est visible dans le code, vous vous trompez :D
+    const correctPassword = "admin"; // Si vous penser que je ne sais pas que le mot de passe est visible dans le code, vous vous trompez :D
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+        
+        
+        if (email === '' || password === '') {
+            errorMessage.textContent = 'Veuillez entrer les identifiants demandés.';
+        } 
+       
+        else if (email === correctEmail && password === correctPassword) {
+            errorMessage.textContent = '';
+            
+            window.location.href = "page centrale.html"; 
+        } 
+       
+        else {
+            errorMessage.textContent = 'Identifiant ou mot de passe incorrect. Veuillez réessayer.';
+        }
+    });
+</script>
+</body>
+</html>

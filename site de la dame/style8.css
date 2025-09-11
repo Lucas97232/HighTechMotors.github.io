@@ -1,0 +1,317 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(233, 233, 233);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+}
+
+.section_1 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+    transition: background 2s ease-in-out, opacity 2s ease-in-out;
+}
+
+.section_1 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.section_3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.section_3_partion_1 {
+    position: relative;
+}
+
+.partition_1_head {
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 70px;
+    width: 160px;
+    transform: translateX(60px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    transform: translateX(-40%);
+    align-items: center;
+    border-bottom: 2px solid crimson;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+nav ul li a { /*  couleur et paramettre  de la navigation */
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: orange;
+    transition: all .3s ease;
+}
+
+nav ul li a:hover { /*  couleur quand tu survolle la navigation  */
+    color: blueviolet;
+}
+
+.welcome_message { /* couleur et paramettre de la phrase d'acceuille "fan de voiture... */
+    font-size: 2rem;
+    color: transparent;
+    font-family: sans-serif;
+    -webkit-text-stroke: 2px darkorange;
+    cursor: pointer;
+    transition: all .4s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.welcome_message:hover { /*  couleur quand tu survolle le message  */
+    color: rgba(255, 255, 255, 0.7);
+    -webkit-text-stroke: 0;
+}
+
+/*   .welcome_message2 {            pour 'instant inutule mais sera utile si jamais je souhaite changer la couleur de l'affichage dans les box a ce moment il faudra je change le html et rajouter le 2 au welcome
+    font-size: 2rem;
+    color: transparent;
+    font-family: sans-serif;
+    -webkit-text-stroke: 2px darkorange;
+    cursor: pointer;
+    transition: all .4s ease;
+    display: inline-block;
+    text-align: center;
+}
+*/
+.section_3_partion_2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carts_container {  /* concerne le conteneur des cartes  */
+    height: 80%;
+    width: 80%; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*  concerne le nombre de cologne impacter par la requete   */
+    grid-template-rows: 1fr;
+    gap: 15px; /* l'espace entre les cartes */
+}
+
+.cart {
+    border: 1px solid #fff;
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all .5s ease;
+    border: 1px solid lightgray;
+    height: 200px; /* Hauteur  pour toutes les cartes */
+}
+
+.cart_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    width: 100%; 
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cart_image_1 {
+    background-image: url(lucascv.jpg);
+}
+
+.cart_image_2 {
+    background-image: url(science\ fiction.jpg);
+}
+
+.cart_image_3 {
+    background-image: url(petitchinois.jpg);
+}
+
+.cart_image_4 {
+    background-image: url(concessionaire.webp);
+}
+
+.cart:hover {
+    transform: translateY(-15px);
+}
+
+/* Media  pour la responsivité */
+@media screen and (max-width: 1024px) {
+    .logo {
+        transform: translateX(20px);
+    }
+    
+    nav {
+        transform: translateX(-10%);
+    }
+    
+    .welcome_message {
+        font-size: 1.8rem;
+    }
+    
+    .carts_container {
+        width: 90%;
+    }
+    
+    .cart_image p.welcome_message {
+        font-size: 1.5rem;
+    }
+}
+
+/* Media pour les petites tablettes */
+@media screen and (max-width: 768px) {
+    .partition_1_head {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo {
+        transform: translateX(0);
+        margin-bottom: 10px;
+    }
+    
+    nav {
+        transform: translateX(0);
+        width: 100%;
+    }
+    
+    nav ul {
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .welcome_message {
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+    
+    .carts_container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        width: 95%;
+    }
+    
+    .cart:last-child {
+        grid-column: span 2;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Media pour les smartphones */
+@media screen and (max-width: 480px) {
+    .section_1 {
+        height: 70vh;
+    }
+    
+    .logo {
+        height: 50px;
+        width: 120px;
+    }
+    
+    nav ul li a {
+        font-size: 1rem;
+    }
+    
+    .welcome_message {
+        font-size: 1.2rem;
+        -webkit-text-stroke: 1px darkorange;
+    }
+    
+    .section_3 {
+        grid-template-rows: auto 1fr;
+    }
+    
+    .section_3_partion_2 {
+        padding-bottom: 20px;
+    }
+    
+    .carts_container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto); /* Changé de 3 à 4 pour inclure la 4ème carte */
+        gap: 20px;
+    }
+    
+    .cart {
+        margin-top: 20px;
+    }
+    
+    .cart:last-child {
+        grid-column: span 1;
+        width: 100%;
+    }
+    
+    .cart_image p.welcome_message {
+        font-size: 1.2rem;
+    }
+}
+
+/* Pour les très petits écrans */
+@media screen and (max-width: 320px) {
+    nav ul {
+        gap: 5px;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 3px 5px;
+    }
+    
+    .welcome_message {
+        font-size: 1rem;
+    }
+}

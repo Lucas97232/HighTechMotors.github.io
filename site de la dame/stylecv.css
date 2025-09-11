@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin:0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    background-color: lightcoral; /*sa c'est le background de ma page html*/
+    display: flex;
+    justify-content: center;/*le contenue de ma page sera centrer*/
+    align-items: center;/*tous les element egalement seront centrer sur ma page*/
+    min-height: 100vh; 
+}
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;/*ligne toute blanche qu'il y a au mileu de ma page r*/
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* cahnge la position ainsi que la taille de la partie gauche en marron par rappor la partie blanche
+    qui etais avant sa en ligne */
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);/*ici j'ai créé un relif noir peu visible en dessous des deux partie */
+}
+.container .left-side{
+    position: relative;
+    background: brown; /*divise le cv en deux partie nous avons la partie marron et nous avons la partie blanche r*/
+    padding: 40px;
+}
+.profileTexte{/* les indication en dessous de la photo de profil "desrosiers lucas  */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255,255,0.2);
+
+}
+.profileTexte .image{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profileTexte .image img{  /* toute cette partie concerne la photo de mon cv comment elle est redimentionner  */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profileTexte h2{
+    color: white;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+
+}
+.profileTexte h2 span{ /* toute cette partie concerne toute les ecriture qui sont dans la balise span (etudiant...)  */
+    font-size: 0.8em;
+    font-weight: 300;
+
+}
+.contactinfo{
+    padding-top: 40px;
+}
+.title{ /*la partie de mes contact c'est tous ce qui concerne le placement et la visibilité  */
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.contactinfo ul{
+    position: relative;
+}
+.contactinfo ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.contactinfo ul li .icon{ /* tous ce qui concerne la couleur des icon et comment ils sont traité */
+    display: inline-block;
+    width: 20px;
+    font-size: 18px;
+    color: lightcoral;
+}
+.contactinfo ul li span{/*la partie qui contiens les information du conctact, numero loca ect */
+    color:lightcyan ;
+    font-weight: 300;
+
+}
+
+.contactinfo.education li{ /*la partie qui contiens les information de "formation" */
+    margin-bottom: 15px;
+    
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+}
+.contactinfo.education h5{ /*la partie qui contiens les information de "formation" mais seulement les ecriture h5*/
+    color: lightcoral;
+    font-weight: 500;
+}
+.contactinfo.education h4:nth-child(2){
+    color: white;
+    font-weight: 500;
+}
+.contactinfo.education h4{
+    color: red;
+    font-weight: 300;
+}
+.contactinfo.langue .pourcent{/* donne le niveau de pourcentage de chaque langue */
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: white;
+    display: block;
+    margin-top: 5px;
+}
+.contactinfo.langue .pourcent div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #333;
+
+}
+.container .right-side{ /*la partie droite donc la partie blanche */
+    position: relative;
+    background: white;
+    padding: 40px;
+
+}
+.about{
+    margin-bottom: 50px;
+}
+.about:last-child{
+    margin-bottom: 0;
+}
+.title2{
+    color: #003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+p{
+    color: #333;
+}
+
+.about .box{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.about .box .year_company{
+    min-width: 150px;
+
+}
+.about .box .year_company h5{
+    text-transform: uppercase;
+    color: lightcoral;
+    font-weight: 600;
+}
+.hobbies-list {
+    color: #333; /* Couleur du texte */
+    padding-left: 20px; /* Décalage à gauche pour l'alignement */
+    font-size: 16px; /* Taille du texte */
+}
+
+.hobbies-list li {
+    margin-bottom: 5px; /* Espacement entre chaque élément */
+    list-style: none;
+    font-weight: 500;
+    margin: 10px 0;
+    color: #333; /* Assure que le texte reste en gris foncé */
+}
+
+.hobbies-list li i { 
+    color: lightcoral; /* Seules les icônes sont en lightcoral */
+    margin-right: 8px; /* Espacement entre l’icône et le texte */
+    width: 18px;
+    font-size: 18px;
+}
+@media(max-width:1000px)
+{
+    .container{
+        margin: 10px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .hobbies-list li{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+.contactinfo.qualite ul {
+    padding-left: 5px; /* Décalage pour l'alignement */
+    list-style-type: none; /* Supprime les puces */
+}
+
+.contactinfo.qualite li {
+    margin-bottom: 5px; /* Espacement réduit entre les éléments */
+    font-size: 16px;
+    color: #fff; /* Change la couleur du texte si besoin */
+    
+}
+.contactinfo.qualite{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px; /* Augmente l'espace en dessous du texte */
+    margin-bottom: 20px; /* Décale la ligne vers le bas */
+}
+.contactinfo{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px; /* Augmente l'espace en dessous du texte */
+    margin-bottom: 15px; /* Décale la ligne vers le bas */
+}
+.about p {
+    margin-bottom: 40px; /* Ajoute un espace après le paragraphe de "Profil" */
+}
+.image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.email-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    transition: transform 0.5s ease;
+    opacity: 0; /* Ajout d'opacité initialement à 0 pour cacher le message */
+}
+
+.image-container:hover img {
+    transform: rotateY(180deg);
+}
+
+.image-container:hover .email-message {
+    transform: rotateY(0deg);
+    opacity: 1; /* Ajout d'opacité à 1 pour rendre le message visible au survol */
+}

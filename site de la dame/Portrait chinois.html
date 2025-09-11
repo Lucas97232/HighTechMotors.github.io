@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylesportrait.css">
+  <title>Science fiction</title>
+</head>
+<body>
+    <div id="Lulu">
+        <video autoplay muted loop playsinline id="video-bg">
+          <source src="couché.mp4" type="video/mp4">
+          Ton navigateur ne supporte pas les vidéos HTML5.
+        </video>
+      
+        <i><h1>Mon portrait chinois</h1></i>
+        <h2>AVEC CES QUELQUES INFORMATIONS, APPRENDS À ME CONNAÎTRE <i>!</i></h2>
+        <p>Si j'étais une couleur, je serais le rouge 😊</p> 
+        <p>Si j'étais un Jedi, je serais Luke Skywalker 🤺</p>
+        <p>Si j'étais un chiffre, je serais le 9️⃣ 1️⃣</p> 
+        <p>Si j'étais un pays, je serais la Grèce 🇬🇷</p>
+        <p> Avant de partir tu souhaite connaitre mon sport préferé 👀? essaye de déchiffrer ce petit message et maintient le clic sur le code pour voir si tu as bon!  </p>
+        <p onmousedown="mDown(this)" onmouseup="mUp(this)">Cliquez sur moi pour faire apparaitre le code secret!!</p>
+        <nav class="navigation-bas">
+            <a href="page d'acceuil.html">Retour à l'acceuil</a>
+        </nav>
+      </div>
+      
+
+  <script>
+    function mDown(obj) {
+      obj.style.backgroundColor = "#ffd32a";
+      obj.innerHTML = " Bravo tu as trouvé mon sport préféré🤗, c'est bien le basket 🏀";
+    }
+
+    function mUp(obj) {
+      obj.style.backgroundColor = "#D94A38";
+      obj.innerHTML = "C3 M3554G3 4 L’41R P3U7-Ê7R3 D1FF1C1L3 4 L1R3, M415 7U V4 7’H4B17U3R : M0N 5P0R7 PR3F3R3 357 L3 B45K37";
+    }
+  </script>
+</body>
+</html>

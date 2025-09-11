@@ -1,0 +1,53 @@
+body{
+	background-image: url("galactic.jpg");
+	padding: 10px;
+}
+
+.carre{
+
+	background-color: red;
+	border: 1px solid green;
+	padding: 6px;
+	border-radius: 5px;
+}
+
+.grille{
+	display: grid;
+	grid-template-columns:2fr 3fr 4fr 4fr;
+	grid-template-rows: repeat(1, 50px);
+
+	/* grid-gap: 10px c'est pour esapcer les cellule*/
+}
+.carre:nth-child(3){ /*bleu*/
+	grid-column-start: 1;
+	grid-column-end: 1;
+	background-color: darkblue;
+
+
+}
+.carre:nth-child(2){
+	grid-column-start: 1;
+	grid-column-end: 3;
+	background-color: green;
+}
+
+.carre:nth-child(5){
+	grid-column-start: 3;
+	grid-column-end: 3;
+	background-color: lightskyblue;
+
+}
+.carre:nth-child(4){
+	grid-column-start: 2;
+	grid-column-end: 5;
+	background-color: darkred;
+
+
+}
+.carre:nth-child(1){
+	grid-column-start: 1;
+	grid-column-end: 5;
+	background-color: darkred;
+
+
+}

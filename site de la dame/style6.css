@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Nouveau style pour le fond d'espace */
+body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #000; /* Fond noir à la place du dégradé */
+    color: white; 
+    position: relative; /* positionement des elements  */
+}
+
+/* mon fond ecran etoilé */
+.space-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 500px;
+    overflow: hidden;
+    z-index: -1; /* Derrière tout le contenu */
+}
+
+header {
+    display: flex; /* Aligne horizontalement le h1 et la nav */
+    justify-content: space-between; /* Met de l'espace entre eux */
+    align-items: center; /* Centre verticalement */
+    padding:  10px; /* Exemple de padding */
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour la lisibilité */
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+ul li::before { /* paramettre de mes lien   */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: white; /*  */
+    border-radius: 50%;
+}
+
+.nav {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.nav ul {
+    list-style: none; /* Enlève les puces */
+    padding: 0; 
+    margin: 0; 
+    display: flex; /* me permet d'aligner les éléments horizontalement */
+    align-items: center; 
+}
+
+.nav ul li {
+    margin-right: 20px; /* Ajoute de l'espace entre les éléments */
+}
+
+.nav ul li:last-child {
+    margin-right: 0; /* Enlève la marge à droite du dernier élément */
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none; /* Enlève le soulignement des liens */
+}
+
+.nav ul li a:visited {
+    color: white;
+}
+
+.nav ul li a:hover {
+    color: #ff3f34; /* Couleur au survol */
+}
+
+h1 {
+    float: left;
+    margin-left: 10px;
+    clear: both;
+}
+
+h1 a {
+    color: white; 
+}
+
+h1 a:visited {
+    color: white;
+}
+
+h1 a:hover {
+    color: red;
+}
+
+.boxs {
+    padding-top: 90px;
+    margin: auto;
+    display: flex;
+    z-index: 1;
+}
+
+#box {
+    background-image: url(fdc4.png);
+}
+
+#box2 {
+    background-image: url(fdc2.png);
+}
+
+#box3 {
+    background-image: url(fdc1.png);
+}
+
+/* paramettre de mes boxs*/
+#box2, #box3, #box4, #box5, #box6, #box7, #box8 {
+    width: 870px;
+    margin-left: 10px;
+    height: 700px;
+    border: 5px double white;
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.3); /* Lueur blanche pour effet spatial */
+}
+
+.informations {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.box {
+    width: 700px;
+    height: 700px;
+    border: 5px double white;
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.3); /* Lueur blanche pour effet spatial */
+    position: relative; 
+    overflow: hidden;   /* masque les element trop voyant */
+}
+
+.box:hover .informations {
+    transform: translateY(0);
+}
+
+.box h3 {
+    color: #e0f2f7;
+    text-shadow: 0 0 5px white; /* Effet de lueur pour thème spatial */
+}
+
+
+@media (max-width: 1000px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .boxs {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding-top: 50px;
+    }
+
+    .box,
+    #box2,
+    #box3,
+    #box4,
+    #box5,
+    #box6,
+    #box7,
+    #box8 {
+        width: 90%;
+        height: auto;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav ul li {
+        margin: 10px 0;
+    }
+}

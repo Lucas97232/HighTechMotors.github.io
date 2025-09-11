@@ -1,0 +1,32 @@
+/* Corps de la page */
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titre en haut */
+header {
+  background: #0078d7;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Zone principale (carte) */
+main {
+  flex: 1;
+  display: flex;
+}
+
+iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+}

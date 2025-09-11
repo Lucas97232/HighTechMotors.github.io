@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculateur d'adresse IP</title>
+  <link rel="stylesheet" href="style12.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Calculateur d'adresse IP</h2>
+    
+    <label>Adresse IP : </label>
+    <input type="text" id="ip" placeholder="ex: 192.168.0.187"><br>
+    
+    <label>Masque CIDR : </label>
+    <input type="number" id="mask" placeholder="ex: 24" min="1" max="32"><br>
+    
+    <button onclick="calculate()">Calculer</button>
+    
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function ipToBinary(ip) {
+      return ip.split('.').map(num => ("00000000" + parseInt(num).toString(2)).slice(-8)).join('');
+    }
+
+    function binaryToIp(bin) {
+      return bin.match(/.{1,8}/g).map(b => parseInt(b, 2)).join('.');
+    }
+
+    function validateIp(ip) {
+      let parts = ip.split(".");
+      if (parts.length !== 4) return false;
+      return parts.every(p => !isNaN(p) && p >= 0 && p <= 255);
+    }
+
+    function calculate() {
+      let ip = document.getElementById("ip").value.trim();
+      let mask = parseInt(document.getElementById("mask").value);
+      let resultDiv = document.getElementById("result");
+      
+      if (!validateIp(ip)) {
+        resultDiv.innerHTML = "<b style='color:red'>⚠️ Adresse IP invalide</b>";
+        return;
+      }
+      if (isNaN(mask) || mask < 1 || mask > 32) {
+        resultDiv.innerHTML = "<b style='color:red'>⚠️ Masque invalide (doit être entre 1 et 32)</b>";
+        return;
+      }
+
+      let ipBin = ipToBinary(ip);
+      let netmaskBin = "1".repeat(mask) + "0".repeat(32 - mask);
+      
+      let networkBin = "";
+      for (let i = 0; i < 32; i++) {
+        networkBin += (ipBin[i] === "1" && netmaskBin[i] === "1") ? "1" : "0";
+      }
+
+      let broadcastBin = "";
+      for (let i = 0; i < 32; i++) {
+        broadcastBin += (netmaskBin[i] === "1") ? ipBin[i] : "1";
+      }
+
+      let networkIp = binaryToIp(networkBin);
+      let broadcastIp = binaryToIp(broadcastBin);
+      let hostCount = Math.pow(2, 32 - mask) - 2;
+      
+      let firstHost = "-";
+      let lastHost = "-";
+
+      if (mask < 31) { 
+        let firstHostBin = (BigInt("0b" + networkBin) + 1n).toString(2).padStart(32, "0");
+        let lastHostBin = (BigInt("0b" + broadcastBin) - 1n).toString(2).padStart(32, "0");
+        firstHost = binaryToIp(firstHostBin);
+        lastHost = binaryToIp(lastHostBin);
+      }
+
+      resultDiv.innerHTML = `
+        <table>
+          <tr><td><b>Adresse IP</b></td><td>${ip}</td></tr>
+          <tr><td><b>Masque /${mask}</b></td><td>${binaryToIp(netmaskBin)}</td></tr>
+          <tr><td><b>Réseau</b></td><td>${networkIp}</td></tr>
+          <tr><td><b>Broadcast</b></td><td>${broadcastIp}</td></tr>
+          <tr><td><b>Nombre d'hôtes</b></td><td>${hostCount >= 0 ? hostCount : 0}</td></tr>
+          <tr><td><b>Premier hôte</b></td><td>${firstHost}</td></tr>
+          <tr><td><b>Dernier hôte</b></td><td>${lastHost}</td></tr>
+        </table>
+      `;
+    }
+  </script>
+</body>
+</html>

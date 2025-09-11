@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>formulaire d'entrerr</title>
+	<link rel="stylesheet" href="style5.css">
+	
+</head>
+<body>
+	<div class="container">
+		<img src="formulaire2.png" alt="" > 
+	
+	</div>
+	<div class="login">
+		<h2 class="title"> Connexion</h2>
+		<h1>Salut les Amis bienvenue</h1>
+		<p>Entre tes identifiants personnels et commence a découvrir mon travail!🤗</p>
+		<form id="loginForm" action="page d'acceuil.html"> <!-- Ajout de l'id au formulaire -->
+			<div class="identifiant">
+				<input type="text" id="email" placeholder="Adresse Email">
+				<input type="password" id="password" placeholder="Mot de passe">
+				<a href="#"><br>Mot de passe / Adresse Email oublié.</a>
+			</div>
+			<input type="submit" value="Connexion">
+		</form>
+		<div id="error-message" style="color: red; margin-top: 10px;"></div> <!-- Message d'erreur ici -->
+		<div class="link-2">
+			<a href="index6.html">Vous n'avez pas de compte ? Créer un compte</a>
+		</div>
+	</div>
+
+<script>
+	const form = document.getElementById('loginForm');
+	const emailInput = document.getElementById('email');
+	const passwordInput = document.getElementById('password');
+	const errorMessage = document.getElementById('error-message');
+	form.addEventListener('submit', function(event) {
+		event.preventDefault();
+		const email = emailInput.value.trim();
+		const password = passwordInput.value.trim();
+		if (email === '' || password === '') {
+				errorMessage.textContent = 'Veuillez entrer les identifiants demandés';
+			} else {
+				errorMessage.textContent = '';
+				form.submit();
+			}
+	});
+
+
+</script>
+</body>
+</html>

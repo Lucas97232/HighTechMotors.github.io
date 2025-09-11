@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff7e6; /* Couleur d'arrière-plan pâle orange */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Conteneur des liens */
+.header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header nav ul li {
+    margin-bottom: 10px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #ff8c42;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    color: #cc5200;
+}
+
+/* Conteneur principal */
+.form-container {
+    background-color: #ffecd4; /* Couleur d'arrière-plan du formulaire */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Titre */
+.form-container h1 {
+    color: #ff8c42; /* Couleur orange vif */
+    margin-bottom: 20px;
+}
+
+/* Champs du formulaire */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #cc5200;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffa64d; /* Bordure orange clair */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #ff8c42; /* Bordure orange vif au focus */
+    outline: none;
+}
+
+/* Bouton */
+form button {
+    background-color: #ff8c42; /* Couleur orange vif */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #cc5200; /* Orange plus foncé au survol */
+}

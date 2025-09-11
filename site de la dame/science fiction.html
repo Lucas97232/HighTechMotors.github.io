@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style6.css">
+    <title>Science fiction</title>
+  
+  </head>
+  <body>
+    <!-- Conteneur pour l'animation d'espace -->
+    <div class="space-container" id="space"></div>
+    
+    <header>
+      <h1><a href="index5.html">Déconexion</a></h1>
+
+      <nav class="nav">
+        <div class="nav-list">
+          <ul>
+            <li><a href="page d'acceuil.html">accueil</a></li>
+            <li><a href="mon cv copie.html">Mon cv</a></li>
+            <li>
+              <a href="formulaire de contact copie.html">Formulaire de conctact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="boxs">
+      <div class="box" id="box">
+        <h3> Maître yoda</h3>
+        <br />
+        <a href="https://vm.tiktok.com/ZNdFY6mod/" target="_blank">
+          <img
+            src="yoda.jpg"
+            height="380px"
+            style="
+              object-fit: contain;
+              width: auto;
+              max-width: 100%;
+              display: block;
+              margin: 0 auto;
+            "
+          />
+        </a>
+
+        <div class="informations">
+          <h3>Maître Yoda</h3>
+          <p><strong>Taille :</strong> 66 cm (environ 0.66 mètre)</p>
+          <p><strong>Âge à sa mort :</strong> Environ 900 ans</p>
+          <p>
+            <strong>Statut :</strong> Maître Jedi légendaire, Membre du Conseil
+            Jedi, Un des êtres les plus puissants dans la Force, Grand maître
+            spirituel de l'Ordre Jedi et surtout un des êtres les plus puissants dans la Force : Sa maîtrise de la Force était exceptionnelle, tant dans ses aspects physiques (comme le combat au sabre laser et la télékinésie) que spirituels (comme la prescience et la sagesse). (Ps clique sur ma photo pour voir un petit edit de moi :)
+          </p>
+        </div>
+        <ul>
+          <!-- Liste vide ici, à remplir si besoin -->
+        </ul>
+      </div>
+      <div class="box" id="box2">
+        <h3> darkvador</h3>
+        <a href="https://vm.tiktok.com/ZNdFYdo2g/" target="_blank"> <video src="darkvador.mp4" controls width="640" height="400"  style="
+        object-fit: contain;
+        width: auto;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      "></video></a>
+
+        <div class="informations">
+          <h3>Darkvador</h3>
+          <p>
+            <strong>Taille :</strong>Sa taille exacte varie légèrement selon les
+            sources, mais il est généralement admis qu'il mesure environ 2,03 à
+            2,05 mètres (6 pieds 8 pouces). Cela est dû à sa grande stature
+            naturelle et aux prothèses de son armure
+          </p>
+          <p>
+            <strong>Âge à sa mort :</strong> Dans l'épisode VI : Le Retour du
+            Jedi, Dark Vador est âgé de 45 ans. Anakin Skywalker est né en 41
+            av. BY et Le Retour du Jedi se déroule en 4 ap. BY.
+          </p>
+          <p>
+            <strong>Statut :</strong>Il est Seigneur Sith, Commandant en chef de
+            la flotte impériale, Bras droit de l'Empereur, Ancien Jedi (Anakin
+            Skywalker), Père de Luke Skywalker et Leia Organa.(Ps clique sur la video pour voir un petit edit de moi :)
+          </p>
+        </div>
+        <ul>
+          <!-- Liste vide ici, à remplir si besoin -->
+        </ul>
+      </div>
+      <div class="box" id="box3">
+        <h3> Gandalf</h3>
+        <a href="https://vm.tiktok.com/ZNdFF3WFH/" target="_blank"><img
+          src="gandalf.png"
+          height="400px"
+          style="
+            object-fit: contain;
+            width: auto;
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+          "
+        /></a>
+
+        <div class="informations">
+          <h3>Gandalf</h3>
+          <p>
+            <strong>Taille :</strong>Gandalf est décrit comme étant grand, mais
+            sa taille exacte est quelque peu ambiguë et peut varier légèrement
+            selon les interprétations. Il est généralement représenté comme
+            étant plus grand que les Hommes normaux, peut-être autour de 1,88 à
+            2,00 mètres (6 pieds 2 pouces à 6 pieds 7 pouces). Son apparence
+            peut aussi sembler plus imposante en raison de sa stature et de sa
+            présence.
+          </p>
+          <p>
+            <strong>Âge à sa mort (ou plutôt son "passage") :</strong> Si l'on
+            se concentre sur sa forme de Gandalf le Gris, il existe depuis des
+            milliers d'années. Il "passe" à la fin du Troisième Âge, en même
+            temps que les autres Porteurs d'Anneaux, pour retourner vers
+            l'Ouest. Il est donc impossible de donner un âge précis en années
+            humaines.
+          </p>
+          <p>
+            <strong>Statut :</strong>Il est Istar, membre du conseil Blanc,
+            porteur de narya (l'anneau du feu), guide et mentor des communautés
+            de l'anneau. (Ps clique sur ma photo pour voir un petit edit de moi :)
+          </p>
+        </div>
+        <ul>
+          <!-- Liste vide ici, à remplir si besoin -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Script pour l'animation des étoiles -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const spaceContainer = document.getElementById('space');
+            const starCount = 400; // Nombre d'étoiles
+            const maxDepth = 1000; // Profondeur maximale
+            const stars = [];
+            
+            // Création des étoiles
+            function createStars() {
+                for (let i = 0; i < starCount; i++) {
+                    const star = document.createElement('div');
+                    star.style.position = 'absolute';
+                    star.style.backgroundColor = 'white';
+                    star.style.borderRadius = '50%';
+                    
+                    // Propriétés de chaque étoile
+                    const starObj = {
+                        element: star,
+                        x: Math.random() * 2000 - 1000, // Position X
+                        y: Math.random() * 2000 - 1000, // Position Y
+                        z: Math.random() * maxDepth, // Position Z (profondeur)
+                        speed: 2 + Math.random() * 3 // Vitesse aléatoire
+                    };
+                    
+                    stars.push(starObj);
+                    spaceContainer.appendChild(star);
+                }
+            }
+            
+            // Animation des étoiles
+            function animateStars() {
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                
+                stars.forEach(star => {
+                    // Mise à jour de la profondeur (Z)
+                    star.z -= star.speed;
+                    
+                    // Si l'étoile sort de la vue, la repositionner au fond
+                    if (star.z <= 0) {
+                        star.z = maxDepth;
+                        star.x = Math.random() * 2000 - 1000;
+                        star.y = Math.random() * 2000 - 1000;
+                    }
+                    
+                    // Calculer la taille et la position en fonction de la profondeur
+                    const scale = (maxDepth - star.z) / maxDepth;
+                    const size = Math.max(1, 5 * scale); // Taille de l'étoile
+                    const brightness = Math.min(1, scale * 1.5); // Luminosité de l'étoile
+                    
+                    // Position 3D projetée en 2D
+                    const projectedX = (star.x * scale) + centerX;
+                    const projectedY = (star.y * scale) + centerY;
+                    
+                    // Appliquer les styles à l'étoile
+                    star.element.style.left = `${projectedX}px`;
+                    star.element.style.top = `${projectedY}px`;
+                    star.element.style.width = `${size}px`;
+                    star.element.style.height = `${size}px`;
+                    star.element.style.opacity = brightness;
+                    star.element.style.boxShadow = `0 0 ${size * 2}px rgba(255, 255, 255, ${brightness})`;
+                    star.element.style.zIndex = Math.floor(scale * 10);
+                });
+                
+                requestAnimationFrame(animateStars);
+            }
+            
+            // Initialisation
+            function init() {
+                createStars();
+                animateStars();
+            }
+            
+            // Ajustement en cas de redimensionnement de la fenêtre
+            window.addEventListener('resize', function() {
+                // Vider le conteneur
+                while (spaceContainer.firstChild) {
+                    spaceContainer.removeChild(spaceContainer.firstChild);
+                }
+                stars.length = 0;
+                
+                // Recréer les étoiles
+                createStars();
+            });
+            
+            init();
+        });
+    </script>
+  </body>
+</html>

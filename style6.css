@@ -1,0 +1,146 @@
+body {
+    background-image: url(tele.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* effet parallax */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    color: white; /* texte plus lisible */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.back-btn {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    color: #ff4df6;
+}
+
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.nav ul li a {
+    color: #00c5ff;
+    text-decoration: none;
+}
+
+.nav ul li a:hover {
+    color: #ff4df6;
+}
+
+.boxs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+/* Cartes téléphones */
+.phone-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 320px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);/* permet un petit contour fin */
+    background: rgba(255, 255, 255, 0.1); /* semi-transparent ce qui permet au box de rester lisible */
+    backdrop-filter: blur(12px); /* effet verre dépoli un peu du style effet flou */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.phone-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.phone-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.phone-card ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.phone-card ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.phone-card ul li::before {
+    content: "•";
+    color: #ffcc00;
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+p b {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* les deiferente bordure ect */
+.samsung-s24-ultra { border-left: 5px solid #c0c0c0; }
+.iphone-16-pro { border-left: 5px solid #ffd700; }
+.xiaomi-14-ultra { border-left: 5px solid #ff3f34; }
+.samsung-z-fold-6 { border-left: 5px solid #003366; }
+.sony-xperia { border-left: 5px solid #ff1493; }
+.oneplus-12r { border-left: 5px solid #00c5f6; }
+.google-pixel-9-pro { border-left: 5px solid #f5f5dc; }
+.honor-magic-6-pro { border-left: 5px solid #98fb98; }
