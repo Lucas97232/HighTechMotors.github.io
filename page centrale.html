@@ -8,6 +8,63 @@
     <link rel="stylesheet" href="style8.css">
     <title>Ma page d'accueil</title>
 </head>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>Problème d'affichage ? Souhaitez-vous accéder à une page plus lisible visuellement ?</h2>
+    <button onclick="window.location.href='page centrale moderne.html'">Oui, y accéder</button>
+    <button onclick="closePopup()">Non, rester sur cette page</button>
+  </div>
+</div>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>Problème d'affichage ? Souhaitez-vous accéder à une page plus lisible visuellement ?</h2>
+    <button onclick="window.location.href='page centrale moderne.html'">Oui, y accéder</button>
+    <button onclick="closePopup()">Non, rester sur cette page</button>
+  </div>
+</div>
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>Problème d'affichage ? Souhaitez-vous accéder à une page plus lisible visuellement ?</h2>
+    <button onclick="window.location.href='page centrale moderne.html'">Oui, y accéder</button>
+    <button onclick="closePopup()">Non, rester sur cette page</button>
+  </div>
+</div>
+
+<script>
+  // Fonction pour afficher le pop-up
+  function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  // Fonction pour fermer le pop-up et enregistrer que l'utilisateur a refusé
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    localStorage.setItem("popupClosed", "true"); // Sauvegarde le refus
+  }
+
+  // Quand la page est entièrement chargée
+  window.onload = function() {
+    // Vérifie si déjà refusé
+    setTimeout(function() {
+      if (!localStorage.getItem("popupClosed")) {
+        showPopup(); // Affiche seulement si jamais refusé
+      }
+    }, 2000); // 2000ms = 2s
+
+    // Ajoute l'événement sur le lien "Aide"
+    const aideLink = document.querySelector("a[href='#aide']");
+    if (aideLink) {
+      aideLink.addEventListener("click", function(e) {
+        e.preventDefault(); // évite le scroll vers #aide
+        localStorage.removeItem("popupClosed"); // Supprime le refus
+        showPopup(); // Réaffiche le pop-up
+      });
+    }
+  };
+</script>
+
+
 
 <body>
     <header>
@@ -28,7 +85,7 @@
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="#">Home</a></li>
+                            <li><a href="#aide">Aide</a></li>
                             <li><a href="formulaire de contact.html"> Me contacter </a></li>
                             <li><a href="index.html">Déconnexion</a></li>
                         </ul>
@@ -40,7 +97,7 @@
             <div class="section_3_partion_2">
                 <div class="carts_container">
                     <div class="cart cart_1">
-                        <a href="cv officiel parcours supp (2).pdf">
+                        <a href="Cv DESROSIERS Lucas.pdf">
                             <div class="cart_image cart_image_1">
                                 <p class="welcome_message">Mon cv!!</p>
                             </div>

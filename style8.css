@@ -162,3 +162,136 @@ nav ul li a:hover {
 .cart:hover {
     transform: translateY(-15px);
 }
+/* Style du pop-up */
+.popup {
+  display: none; /* Masqué par défaut */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);  /* transparence du pop up */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;  /* toute la boite blanche du pop up que l'on voit visuellement */
+  color: black;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  max-width: 80%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  animation: fadeIn 0.5s ease;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+ /* tous ce qui concerne les boutons et les boutons au survol  */
+.popup-content button:first-child {
+  background: #0078d7;
+  color: white;
+}
+
+.popup-content button:first-child:hover {
+  background: #005fa3;
+}
+
+.popup-content button:last-child {
+  background: #ccc;
+}
+
+.popup-content button:last-child:hover {
+  background: #999;
+}
+
+/* leger effet d'animation */
+@keyframes fadeIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+   
+    
+    header {
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .section_3_partion_1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .partition_1_head {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        transform: none; 
+
+    }
+
+    .logo {
+        transform: none;
+        height: 60px;
+        width: 140px;
+    }
+
+    nav {
+        transform: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+    
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    .welcome_message {
+        font-size: 1.5rem;
+        -webkit-text-stroke: 1px darkorange;
+        margin-top: 20px;
+        line-height: 1.2; /* Améliore la lisibilité sur plusieurs lignes */
+        padding: 0 10px;
+    }
+
+    .section_3_partion_2 {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+    
+    .carts_container {
+        height: auto;
+        width: 90%;
+        grid-template-columns: 1fr; /* Une seule colonne pour les cartes */
+        grid-template-rows: repeat(3, auto);
+        gap: 20px;
+    }
+
+    .cart {
+        padding: 10px;
+    }
+    
+    .cart:hover {
+        transform: translateY(0); /* Désactive l'effet de survol sur mobile */
+    }
+}

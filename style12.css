@@ -61,4 +61,56 @@ body {
     border-bottom: 1px solid #ddd;
     text-align: left;
   }
+  @media (max-width: 768px) {
   
+  /* Ajuste la mise en page générale pour les petits écrans */
+  body {
+    padding: 10px;
+  }
+  
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  /* Règle principale pour les cartes de modèles */
+  .models {
+    grid-template-columns: 1fr; /* Les cartes s'empilent en une seule colonne */
+    gap: 20px;
+    padding: 20px 10px;
+  }
+  
+  /* Ajuste la taille de la police des titres des modèles */
+  .model h3 {
+    font-size: 1rem;
+    text-align: center;
+    padding: 5px 0;
+  }
+  
+  /* S'assure que les images remplissent leur conteneur */
+  .model img {
+    height: auto;
+    width: 100%;
+  }
+
+  .cta button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
